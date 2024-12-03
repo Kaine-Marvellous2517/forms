@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign-in page</title>
+  <style>
+    /*Screen One*/
+    body {
+      padding: 10px 25px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    main {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      justify-content: space-around;
+      position: relative;
+      
+      animation: form 1.15s ease-in-out;
+    }
+    @keyframes form {
+      from{left: -15px}
+      to{left: 6px;}
+    }
+    #header h1 {
+      padding: 18px 14px;
+      background-color: rgba(180, 180, 180, 0.25);
+      color: rebeccapurple;
+      border: none;
+      border-radius: 2px;
+      font-size: 20px;
+      font-weight: bolder;
+      font-family: Arial, Helvetica, sans-serif;
+      
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      gap: 10px;
+      justify-content: space-around;
+    }
+    label, h3, p, #btn, .input-elem {
+      font-size: 12px;
+    }
+    .input-elem {
+      padding: 12px;
+      width: 95%;
+      border: 1px solid black;
+      border-radius: 2px;
+      background-color: white;
+    }
+    .verify-box {
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+      justify-content: space-ev;
+    }
+    .input-elem1 {
+      padding: 12px;
+      width: 25%;
+      border: 1px solid black;
+      border-radius: 2px;
+      background-color: white;
+    }
+    a {
+      color: black;
+    }
+    #btn {
+      margin-top: 10px;
+      padding: 10px 14px;
+      background-color: rebeccapurple;
+      color: white;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .btn {
+      float: right;
+      margin-top: 10px;
+      padding: 10px 14px;
+      background-color: rebeccapurple;
+      color: white;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+
+    /*Screen Two*/
+    @media (min-width: 769px) and (max-width: 1024px) {
+      main {
+        padding: 40px;
+        gap: 30px;
+      }
+      @keyframes form {
+      from{left: -30px;}
+      to{left: 20px;}
+      }
+      #header h1 {
+        font-size: 22px;
+      }
+      section {
+        column-gap: 60px
+      }
+      form {
+        gap: 16px;
+      }
+      label, h3, p, #btn, .input-elem {
+        font-size: 14px;
+      }
+      .input-elem {
+        padding: 14px;
+        width: 100%
+      }
+      .verify-box {
+        padding: 24px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+      justify-content: space-evenly;
+      }
+      .input-elem1 {
+        padding: 14px;
+        width: 25%;
+        border: 1px solid black;
+        border-radius: 2px;
+        background-color: white;
+      }
+    }
+
+    /*Screen Three*/
+    @media (min-width: 1025px) and (max-width: 1200px) {
+      main {
+        padding: 40px;
+        gap: 20px;
+      }
+      @keyframes form {
+      from{left: -30px;}
+      to{left: 20px;}
+     }
+      #header h1 {
+        font-size: 24px;
+      }
+      section {
+        column-gap: 60px;
+      }
+      form {
+        gap: 16px;
+      }
+      label, h3, p, #btn, .input-elem {
+        font-size: 16px;
+      }
+      .input-elem {
+        padding: 16px;
+        width: 100%;
+      }
+      .verify-box {
+        padding: 26px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+      justify-content: space-evenly;
+      }
+      .input-elem1 {
+        padding: 16px;
+        width: 25%;
+        border: 1px solid black;
+        border-radius: 2px;
+        background-color: white;
+      }
+    }
+
+      /*Screen Four*/
+    @media (min-width: 1201px) {
+      main {
+        padding: 40px;
+        gap: 20px;
+      }
+      @keyframes form {
+      from{left: -30px;}
+      to{left: 20px;}
+     }
+      #header h1 {
+        font-size: 26px;
+      }
+      section {
+        column-gap: 60px;
+      }
+      form {
+        gap: 16px;
+      }
+      label, h3, p, #btn, .input-elem {
+        font-size: 18px;
+      }
+      .input-elem {
+        padding: 16px;
+        width: 100%;
+      }
+      .verify-box {
+        padding: 28px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2px;
+      justify-content: space-evenly;
+      }
+      .input-elem1 {
+        padding: 18px;
+        width: 25%;
+        border: 1px solid black;
+        border-radius: 2px;
+        background-color: white;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section>
+      <hgroup id="header">
+        <h1>SIGN-IN</h1>
+        <h3>Be precise with your details</h3>
+      </hgroup>
+    
+      <form method="post" enctype="multipart/form-data" action="/signup">
+        <div>
+          <label for="email">Email</label>
+          <input placeholder="answer" class="input-elem" type="email" name="email" id="email">
+        </div>
+        <div id="pw">
+          <label for="password">Password</label>
+          <input pattern=".{6,}"title="Password must be more than 6" placeholder="answer" class="input-elem" type="password" name="password" id="password">
+          <p id="para"></p>
+        </div>
+        <div>
+          <label for="username">Username</label>
+          <input placeholder="answer" class="input-elem" type="text" name="username" id="username">
+        </div>
+
+        <div>
+          <input onclick="signin()" type="submit" name="btn" id="btn">
+        </div>
+      </form>
+    
+      <a href="/login">
+        <p><small>Already have an account</small></p>
+      </a>
+    </section>
+  </main>
+  
+  <script>
+    // function signin() {
+    //   let username = document.getElementById("username").value;
+    //   let email = document.getElementById("email").value;
+    //   let password = document.getElementById("password");
+    //   password.value
+    //   password.length=6;
+      
+    //   // console.log(name);
+    //   if (username && email && password) {
+    //     window.open("jwt.html");
+    //   } else if (username && email && !password) {
+    //     alert("Please follow the password pattern");
+    //   } else {
+    //     alert("Please enter the required field");
+    //   }
+    // }
+
+
+
+/*
+function strongPassword() {
+  let elem = document.getElementById('password');
+  let para = document.getElementById('para');
+  let a = elem.value;
+  let b = elem.pattern
+  
+  if(a == b){
+    para.innerHTML = 'Poor password';
+  }
+  
+  else if (a === d) {
+    para.innerHTML = 'Strong password';
+  }*/
+  
+
+/*
+else {
+let h4 = document.createElement('h4');
+h4.style="color: red";
+h4.innerHTML = 'Please complete the form';
+let show = document.getElementById('header').append(h4);
+}
+*/
+
+  </script>
+  
+</body>
+
+</html>
